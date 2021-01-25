@@ -1,0 +1,28 @@
+{
+  "shopping-list": [
+    {
+      "id": 1,
+      "name": "молоко",
+      "number": 2,
+      "status": false
+    },
+    {
+      "id": 2,
+      "name": "хлеб",
+      "number": 1,
+      "status": false
+    },
+    {
+      "id": 3,
+      "name": "огурцы",
+      "number": 2,
+      "status": false
+    },
+    {
+      "id": 4,
+      "name": "помидоры",
+      "number": 6,
+      "status": false
+    }
+  ]
+}
