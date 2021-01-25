@@ -3,4 +3,5 @@ export interface MyProduct {
   name: string;
   number: number;
   status: boolean;
+  edit: boolean;
 }

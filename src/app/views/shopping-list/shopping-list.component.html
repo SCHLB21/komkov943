@@ -1,1 +1,56 @@
-<p>shopping-list works!</p>
+<ng-container>
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Наименование</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Статус</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of shopping_list">
+        <th>{{ product.id }}</th>
+        <td *ngIf="!product.edit">{{ product.name }}</td>
+        <td *ngIf="!product.edit">{{ product.number }}</td>
+        <td *ngIf="product.edit">
+          <input type="text" [(ngModel)]="product.name" />
+        </td>
+        <td *ngIf="product.edit">
+          <input type="number" [(ngModel)]="product.number" />
+        </td>
+        <td>
+          <button
+            class="btn btn-sm"
+            [ngClass]="{
+              'btn-success': !product.status,
+              'btn-light': product.status
+            }"
+            (click)="changeStatus(product)"
+          >
+            {{ getStatus(product.status) }}
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-primary btn-sm"
+            (click)="editThisProduct(product)"
+            [disabled]="product.name == '' || product.number == null"
+          >
+            Редактировать
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-danger btn-sm"
+            (click)="deleteThisProduct(product.id)"
+          >
+            Удалить
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
