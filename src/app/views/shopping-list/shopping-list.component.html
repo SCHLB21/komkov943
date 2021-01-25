@@ -1,5 +1,5 @@
 <ng-container>
-  <table class="table mt-5">
+  <table class="table mt-5" style="overflow-x: auto">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -11,7 +11,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of shopping_list">
+      <tr
+        *ngFor="let product of shopping_list | sort"
+        [ngClass]="{
+          'btn-success': !product.status,
+          'btn-light': product.status
+        }"
+      >
         <th>{{ product.id }}</th>
         <td *ngIf="!product.edit">{{ product.name }}</td>
         <td *ngIf="!product.edit">{{ product.number }}</td>
@@ -23,11 +29,7 @@
         </td>
         <td>
           <button
-            class="btn btn-sm"
-            [ngClass]="{
-              'btn-success': !product.status,
-              'btn-light': product.status
-            }"
+            class="btn btn-sm text-white bg-dark"
             (click)="changeStatus(product)"
           >
             {{ getStatus(product.status) }}

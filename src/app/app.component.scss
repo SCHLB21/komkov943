@@ -1,0 +1,11 @@
+@media (max-width: 776px) {
+  .container {
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+}
+@media (max-width: 586px) {
+  .container {
+    overflow-x: scroll;
+  }
+}

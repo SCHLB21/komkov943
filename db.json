@@ -27,6 +27,20 @@
       "number": 6,
       "status": false,
       "edit": false
+    },
+    {
+      "name": "Фрукты",
+      "number": 10,
+      "status": false,
+      "edit": false,
+      "id": 7
+    },
+    {
+      "name": "Продукт",
+      "number": 2,
+      "status": false,
+      "edit": false,
+      "id": 8
     }
   ]
 }

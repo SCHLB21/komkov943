@@ -10,9 +10,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './views/main/main.component';
 import { ShoppingListComponent } from './views/shopping-list/shopping-list.component';
+import { AddProductComponent } from './views/add-product/add-product.component';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MainComponent, ShoppingListComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MainComponent,
+    ShoppingListComponent,
+    AddProductComponent,
+    SortPipe,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

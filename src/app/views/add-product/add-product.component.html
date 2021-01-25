@@ -1,0 +1,35 @@
+<form [formGroup]="addForm">
+  <div class="row mb-3">
+    <div class="col-12 mb-3 mt-3">
+      <h5>Добавить сотрудника</h5>
+    </div>
+    <div class="col-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Наименование"
+        formControlName="name"
+      />
+    </div>
+    <div class="col-4">
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Количество"
+        formControlName="number"
+      />
+    </div>
+    <div class="col-12 mt-1">
+      <button
+        class="btn btn-outline-primary btn-sm"
+        [disabled]="addForm.invalid"
+        (click)="addProduct()"
+      >
+        Добавить
+      </button>
+      <div *ngIf="addForm.invalid" class="alert alert-info">
+        Для добавления в список заполните все поля
+      </div>
+    </div>
+  </div>
+</form>
